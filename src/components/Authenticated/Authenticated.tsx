@@ -40,8 +40,9 @@ function Authenticated() {
         const taskFromApi = await fetchTasks();
         setTasks(taskFromApi);
         setStatus("success");
-      } catch (error) {
-        if (error.message === "Unauthorized") {
+      } catch (error:unknown) {
+        const err =error as Error;
+        if (err.message === "Unauthorized") {
           logout();
         } else {
           console.error("Error loading task:", error);
@@ -243,7 +244,7 @@ function Authenticated() {
         <div className={s["tasks-list"]}>
           {isLoading && <p>Loading...</p>}
           {tasks.length > 0 &&
-            sortedTasks.map((task) => (
+            sortedTasks.map((task: Task) => (
               <div key={task.id} className={s["task-wrapper"]}>
                 <div className={s["task-data"]}>
                   <input
