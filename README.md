@@ -41,7 +41,4 @@ The project is deployed on **Vercel**, allowing real-time updates and easy acces
 
 🔗 **[Live Demo](https://react-evaluation-codeable.vercel.app/)**
 
-## 📌 Project Status
-
-✅ Fully functional. Currently improving code optimization and adding unit tests.  
 📌 **Any feedback is welcome!** 😃
